@@ -44,7 +44,7 @@ class ShipmentTableDrawer extends React.Component<{
             </View>
           ))}
         </View>
-        <View style={{ borderLeftWidth: 1 }}>
+        <View style={tableStyles.tableBodyContainer}>
           {tableData.rows.map((r, index) => (
             <View
               key={index}

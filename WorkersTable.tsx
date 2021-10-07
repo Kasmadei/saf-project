@@ -29,11 +29,11 @@ export default class WorkersTable extends React.Component {
                 ...tableStyles.tableColumnNamesContainer,
               }}
             >
-              <Text>{cm}</Text>
+              <Text style={{ textAlign: "center" }}>{cm}</Text>
             </View>
           ))}
         </View>
-        <View style={{ borderLeftWidth: 1 }}>
+        <View style={tableStyles.tableBodyContainer}>
           {WORKERS_TABLE_MOCK.rows.map((r, index) => (
             <View
               key={index}

@@ -1,7 +1,9 @@
 import { StyleSheet } from "react-native";
 
-export const TABLE_CELL_WIDTH = 120;
-export const TABLE_CELL_WIDTH_MIN = 60;
+export const TABLE_CELL_WIDTH = 90;
+export const TABLE_CELL_HEIGHT = 52;
+
+const customGrey = "#D5D5D9";
 
 export const tableStyles = StyleSheet.create({
   tableContainer: {
@@ -23,15 +25,10 @@ export const tableStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRightWidth: 1,
-  },
-  tableCellMin: {
-    width: TABLE_CELL_WIDTH_MIN,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRightWidth: 1,
+    borderColor: customGrey,
   },
   tableColumnNamesContainer: {
-    minHeight: 60,
+    minHeight: TABLE_CELL_HEIGHT,
     alignItems: "center",
     justifyContent: "center",
     borderRightWidth: 1,
@@ -39,8 +36,13 @@ export const tableStyles = StyleSheet.create({
     borderColor: "black",
   },
   tableRowContainer: {
-    minHeight: 60,
+    minHeight: TABLE_CELL_HEIGHT,
     flexDirection: "row",
     borderBottomWidth: 1,
+    borderColor: customGrey,
+  },
+  tableBodyContainer: {
+    borderLeftWidth: 1,
+    borderColor: customGrey,
   },
 });

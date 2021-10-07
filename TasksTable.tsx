@@ -1,6 +1,6 @@
 import React from "react";
 import { TasksTableType } from "./types";
-import { tableStyles, TABLE_CELL_WIDTH, TABLE_CELL_WIDTH_MIN } from "./styles";
+import { tableStyles, TABLE_CELL_WIDTH } from "./styles";
 import { Text, View } from "react-native";
 
 const TASKS_TABLE_MOCK: TasksTableType = {
@@ -32,7 +32,7 @@ export default class TasksTable extends React.Component {
             <View
               key={index}
               style={{
-                width: index === 1 ? TABLE_CELL_WIDTH_MIN : TABLE_CELL_WIDTH,
+                width: TABLE_CELL_WIDTH,
                 ...tableStyles.tableColumnNamesContainer,
               }}
             >
@@ -40,21 +40,19 @@ export default class TasksTable extends React.Component {
             </View>
           ))}
         </View>
-        <View style={{ borderLeftWidth: 1 }}>
+        <View style={tableStyles.tableBodyContainer}>
           {TASKS_TABLE_MOCK.rows.map((r, index) => (
             <View
               key={index}
               style={{
-                width:
-                  TASKS_TABLE_MOCK.columnNames.length * TABLE_CELL_WIDTH -
-                  TABLE_CELL_WIDTH_MIN,
+                width: TASKS_TABLE_MOCK.columnNames.length * TABLE_CELL_WIDTH,
                 ...tableStyles.tableRowContainer,
               }}
             >
               <View style={tableStyles.tableCell}>
                 <Text>{r.holderName}</Text>
               </View>
-              <View style={tableStyles.tableCellMin}>
+              <View style={tableStyles.tableCell}>
                 <Text>{r.id}</Text>
               </View>
               <View style={tableStyles.tableCell}>
