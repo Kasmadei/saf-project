@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { WorkersTableType } from "./types";
-import { tableStyles, TABLE_CELL_WIDTH } from "./styles";
+import { tableStyles, TABLE_CELL_WIDTH, TABLE_CELL_WIDTH_MIN } from "./styles";
 
 const WORKERS_TABLE_MOCK: WorkersTableType = {
   tableName: "Workers",
@@ -21,11 +21,11 @@ export default class WorkersTable extends React.Component {
           {WORKERS_TABLE_MOCK.tableName}
         </Text>
         <View style={tableStyles.tableHeaderContainer}>
-          {WORKERS_TABLE_MOCK.columnNames.map((cm, i) => (
+          {WORKERS_TABLE_MOCK.columnNames.map((cm, index) => (
             <View
-              key={i}
+              key={index}
               style={{
-                width: TABLE_CELL_WIDTH,
+                width: index === 1 ? TABLE_CELL_WIDTH_MIN : TABLE_CELL_WIDTH,
                 ...tableStyles.tableColumnNamesContainer,
               }}
             >
@@ -38,14 +38,17 @@ export default class WorkersTable extends React.Component {
             <View
               key={index}
               style={{
-                width: WORKERS_TABLE_MOCK.columnNames.length * TABLE_CELL_WIDTH,
+                width:
+                  WORKERS_TABLE_MOCK.columnNames.length -
+                  1 * TABLE_CELL_WIDTH +
+                  TABLE_CELL_WIDTH_MIN,
                 ...tableStyles.tableRowContainer,
               }}
             >
               <View style={tableStyles.tableCell}>
                 <Text>{r.workerName}</Text>
               </View>
-              <View style={tableStyles.tableCell}>
+              <View style={tableStyles.tableCellMin}>
                 <Text>{r.numberOfTasks}</Text>
               </View>
               <View style={tableStyles.tableCell}>
