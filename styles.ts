@@ -3,6 +3,8 @@ import { StyleSheet } from "react-native";
 export const TABLE_CELL_WIDTH = 90;
 export const TABLE_CELL_HEIGHT = 52;
 
+export const TABLE_CELL_WIDTH_MIN = 65;
+
 const customGrey = "#D5D5D9";
 
 export const tableStyles = StyleSheet.create({
@@ -22,6 +24,13 @@ export const tableStyles = StyleSheet.create({
   },
   tableCell: {
     width: TABLE_CELL_WIDTH,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRightWidth: 1,
+    borderColor: customGrey,
+  },
+  tableCellMin: {
+    width: TABLE_CELL_WIDTH_MIN,
     alignItems: "center",
     justifyContent: "center",
     borderRightWidth: 1,
