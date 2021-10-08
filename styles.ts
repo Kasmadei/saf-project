@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const TABLE_CELL_WIDTH = 90;
-export const TABLE_CELL_HEIGHT = 52;
+export const TABLE_CELL_HEIGHT = 50;
 
 export const TABLE_CELL_WIDTH_MIN = 65;
 
